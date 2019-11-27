@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,7 +21,6 @@ public class Cidade {
 	private String nome;
 	
 	@ManyToOne
-	@JoinColumn(name = "estado_id")
 	private Estado uf;
 	
 	public Cidade(String nome, Estado uf) {

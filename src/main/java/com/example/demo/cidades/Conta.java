@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,12 +20,20 @@ public class Conta {
 	private String numero;
 	
 	@ManyToOne
-	@JoinColumn(name = "agencia_id")
 	private Agencia agencia;
 	
-	@ManyToOne
-	@JoinColumn(name = "saldo")
+	@Column(name = "saldo")
 	private Double saldo;
+	
+	@Column(name = "cliente")
+	private Cliente cliente;
+	
+	public Conta(String numero, Agencia agencia, Double saldo, Cliente cliente) {
+		this.numero = numero;
+		this.agencia = agencia;
+		this.saldo = saldo;
+		this.cliente = cliente;
+	}
 
 	public Long getId() { return id; }
 	
@@ -35,6 +42,8 @@ public class Conta {
 	public Agencia getCidade() { return agencia; }
 	
 	public Double getSaldo() { return saldo; }
+	
+	public Cliente getCliente() { return cliente; }
 	
 	public Conta() {}
 	

@@ -5,7 +5,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -21,12 +20,17 @@ public class Agencia {
 	private String numero;
 	
 	@ManyToOne
-	@JoinColumn(name = "cidade_id")
 	private Cidade cidade;
 	
-	@ManyToOne
-	@JoinColumn(name = "banco")
+	@Column(name = "banco")
 	private String banco;
+	
+	public Agencia(String banco, String numero, Cidade cidade) {
+		this.banco = banco;
+		this.numero = numero;
+		this.cidade = cidade;
+	}
+	
 	
 	public Long getId() { return id; }
 	
@@ -35,6 +39,8 @@ public class Agencia {
 	public Cidade getCidade() {return cidade;}
 	
 	public String getBanco() { return banco; }
+	
+	public Agencia(String numero, String banco) {}
 	
 	public Agencia() {}
 }

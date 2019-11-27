@@ -31,9 +31,7 @@ public class Estado {
 		this.nome = nome;
 	}
 	
-	public Long getId() {
-		return id;
-	}
+	public Long getId() { return id; }
 	
 	public String getNome() { return nome; }
 	

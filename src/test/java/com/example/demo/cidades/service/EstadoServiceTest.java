@@ -13,21 +13,20 @@ import com.example.demo.cidades.service.EstadoService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-
 public class EstadoServiceTest {
 	
 	@Autowired
 	private EstadoService estadoService;
 	
-//	@After
-//	public void clean() {
-//		estadoService.deletarPorId();
-//	}
+	@After
+	public void clean() {
+		//estadoService.deletarPorId();
+	}
 	
-//	@After
-//	public void cleanAll() {
-//		estadoService.limpar();
-//	}
+	@After
+	public void cleanAll() {
+		//estadoService.limpar();
+	}
 	
 	//@Test
 	public void test() {

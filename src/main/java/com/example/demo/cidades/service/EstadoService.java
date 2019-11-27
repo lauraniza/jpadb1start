@@ -8,6 +8,7 @@ import com.example.demo.cidades.repository.EstadoRepository;
 
 @Service
 public class EstadoService {
+	
 	@Autowired
 	private EstadoRepository estadoRepository;
 	
