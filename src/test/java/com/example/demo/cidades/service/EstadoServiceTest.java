@@ -28,21 +28,21 @@ public class EstadoServiceTest {
 		//estadoService.limpar();
 	}
 	
-	//@Test
+	@Test
 	public void test() {
-		Estado estado = estadoService.criar("Santa Catarina");
+		Estado estado = estadoService.criar("Paraná");
 		
 		assertNotNull(estado);
 		System.out.println(estado.getId());
 	}
 	
-	@Test
+	//@Test
 	public void deveBuscarEstado() {
 		Estado estado = estadoService.buscarPorNomes("Paraná");
 		assertNotNull(estado);
 	}
 	
-	@Test
+	//@Test
 	public void deveLancarExcecao() {
 		try {
 			Estado estado = estadoService.buscarPorNomes("São Paulo");

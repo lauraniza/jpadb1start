@@ -5,7 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +27,8 @@ public class Conta {
 	@Column(name = "saldo")
 	private Double saldo;
 	
-	@Column(name = "cliente")
+	@OneToOne
+	@JoinColumn(name = "clienteId")
 	private Cliente cliente;
 	
 	public Conta(String numero, Agencia agencia, Double saldo, Cliente cliente) {
